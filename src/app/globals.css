@@ -126,4 +126,12 @@
   html {
     @apply font-sans;
   }
+  button,a{
+    
+    @apply cursor-pointer
+  }
+}
+
+body {
+  @apply selection:bg-black selection:text-primary-foreground;
 }
