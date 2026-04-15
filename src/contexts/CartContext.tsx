@@ -31,11 +31,11 @@ export default function CartContextProvider({
     try {
       setIsCartLoading(true);
       const response = await getCart();
-      console.log(response);
+     
 
       setNumOfCartItems(response.numOfCartItems);
     } catch (error) {
-      console.log(error);
+    
     } finally {
       setIsCartLoading(false);
     }

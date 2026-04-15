@@ -333,8 +333,6 @@ export default function Navbar() {
   const { numOfCartItems, isCartLoading } = useContext(CartContext);
   const { numOfWishListItems, isWishListLoading } = useContext(WishListContext);
   const session = useSession();
-  console.log(session.data?.user?.token);
-  console.log(session.data?.user?.role);
 
   return (
     <header className="sticky top-0 z-40 bg-white shadow-sm">

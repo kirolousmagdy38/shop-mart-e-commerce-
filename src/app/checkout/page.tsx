@@ -4,7 +4,7 @@ import { useState, useEffect, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-// import { checkout } from "@/actions/orderAction";
+
 import {
   ArrowLeftIcon,
   ShieldCheckIcon,
@@ -118,16 +118,16 @@ export default function CheckoutPage() {
 
     try {
       if (paymentMethod === "cash") {
-        // Cash on delivery — createOrder is the correct action
+       
         const response = await createOrder(cartId, { shippingAddress });
-        setNumOfCartItems(0); // clear badge in navbar
+        setNumOfCartItems(0); 
         toast.success(response.message || "Order placed successfully!");
         router.replace("/products");
       } else {
-        // Online payment — checkout action returns a Stripe session URL
+       
         const response = await checkout({ shippingAddress }, cartId);
         if (response?.session?.url) {
-          // Redirect to Stripe hosted checkout page
+      
           window.location.href = response.session.url;
         } else {
           throw new Error(

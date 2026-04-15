@@ -7,7 +7,7 @@ import type { NextRequest } from "next/server";
 
 const authRoutes = ["/auth/signin", "/auth/register"]; 
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const token = await getToken({ req: request });
   const { pathname } = request.nextUrl;
 

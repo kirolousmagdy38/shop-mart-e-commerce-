@@ -31,7 +31,6 @@ export default function WishListContextProvider({
     try {
       setIsWishListLoading(true);
       const response = await getWishList();
-      console.log("wishlist response:", response);
       setNumOfWishListItems(response.count);
     } catch (error) {
       console.log(error);
